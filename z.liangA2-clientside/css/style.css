@@ -1,0 +1,104 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Center all sections */
+section {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #1b6cd7;  /* Main color */
+    margin-bottom: 20px;
+}
+
+/* Navigation Menu */
+header {
+    background-color: #1b6cd7;  /* Main color */
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;  /* level */
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Welcome section */
+.welcome {
+    background: linear-gradient(to bottom, #ffffff, #1b6dd771); 
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.welcome p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Inspirational Stories, Contact Section */
+.stories, .contact {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    margin: 30px auto;
+    padding: 40px;
+    max-width: 1000px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Fundraiser Section */
+#fundraiser-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Three card per row */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #1b6cd7;  /* Main theme color */
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.1em;
+}
+
