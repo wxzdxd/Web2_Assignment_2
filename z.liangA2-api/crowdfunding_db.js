@@ -56,15 +56,38 @@ app.get('/api/categories', (req, res) => {
     });
 });
 
-// Get active fundraisers by category ---- search
-app.get('/api/fundraiser/category/:categoryId', (req, res) => {
-    const query = `
+// Query to select active fundraisers ---- search
+app.get('/api/search', (req, res) => {
+    // Filtering criteria from query parameters
+    const { category, organizer, city } = req.query;
+
+    // Select active fundraisers
+    let query = `
         SELECT f.*, c.NAME 
         FROM fundraiser f
         JOIN category c ON f.CATEGORY_ID = c.CATEGORY_ID
-        WHERE f.ACTIVE = 1 AND f.CATEGORY_ID = ?`;
+        WHERE f.ACTIVE = 1`;
 
-    db.query(query, [req.params.categoryId], (err, results) => {
+    // Add conditions to the query based on the provided parameters
+    const queryParams = [];
+    
+    if (category) {
+        query += ` AND f.CATEGORY_ID = ?`;
+        queryParams.push(category);
+    }
+
+    if (organizer) {
+        query += ` AND f.ORGANIZER LIKE ?`;
+        queryParams.push(`%${organizer}%`);
+    }
+
+    if (city) {
+        query += ` AND f.CITY LIKE ?`;
+        queryParams.push(`%${city}%`);
+    }
+
+    // Database query
+    db.query(query, queryParams, (err, results) => {
         if (err) {
             return res.status(500).send('Database error');
         }

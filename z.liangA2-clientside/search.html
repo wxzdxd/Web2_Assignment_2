@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Fundraiser</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
 </head>
+
 <body>
-    
+    <!-- Nav Menu -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./search.html">Search Fundraiser</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1>Search Fundraisers</h1>
+
+    <div class="form-container">
+        <!-- Search form -->
+        <form id="search-form">
+            <label for="organizer">Organizer:</label>
+            <input type="text" id="organizer" name="organizer" placeholder="Enter organizer name">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" placeholder="Enter city name">
+
+            <label for="category">Category:</label>
+            <select id="category" name="category">
+                <option value="">Select category</option>
+                <option value="1">Health</option>
+                <option value="2">Education</option>
+                <option value="3">Environment</option>
+            </select>
+
+            <!-- Search and Clear buttons -->
+            <button type="button" onclick="search()">Search</button>
+            <button type="button" class="clear-btn" onclick="clearFormData()">Clear</button>
+        </form>
+
+        <!-- Error message -->
+        <p id="error-message" class="error-message" style="display: none;">No fundraisers found.</p>
+    </div>
+
+    <!-- Fundraiser results -->
+    <section id="fundraisers">
+        <h2>Search Fundraisers</h2>
+        <div id="fundraiser-list">
+            <!-- Fundraiser data for js -->
+        </div>
+    </section>
+
+    <script src="js/search.js"></script>
 </body>
+
 </html>
