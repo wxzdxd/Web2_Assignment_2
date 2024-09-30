@@ -107,6 +107,11 @@ nav ul li a:hover {
     border: 1px solid #e0e0e0;
 }
 
+.fundraiser-card a{
+    color: #1b6cd7;
+}
+
+
 .fundraiser-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);  /* shadow on hover */

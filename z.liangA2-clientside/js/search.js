@@ -69,6 +69,10 @@ function displayFundraisers(fundraisers) {
         const category = document.createElement('p');
         category.innerHTML = `<strong>Category:</strong> ${fundraiser.NAME}`;
 
+        const link = document.createElement('a');
+        link.href = `fundraiser.html?id=${fundraiser.FUNDRAISER_ID}`;
+        link.textContent = 'View Details';
+
         card.appendChild(image);
         card.appendChild(title);
         card.appendChild(organizer);
@@ -76,6 +80,7 @@ function displayFundraisers(fundraisers) {
         card.appendChild(current);
         card.appendChild(city);
         card.appendChild(category);
+        card.appendChild(link);
 
         // Append the card to the list
         fundraiserList.appendChild(card);
@@ -90,7 +95,7 @@ function showErrorMessage(message) {
 }
 
 // Clear the search form and hide error messages
-function clearFormData() {
+function clearChechboxes() {
     document.getElementById('search-form').reset();
     document.getElementById('error-message').style.display = 'none'; // Hide error message
     document.getElementById('results-container').innerHTML = ''; // Clear results
